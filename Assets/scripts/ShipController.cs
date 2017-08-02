@@ -12,10 +12,12 @@ public class ShipController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		if (Input.GetKey(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+            //GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+            GetComponent<Rigidbody>().AddForce(transform.forward * 10.0f);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -26,5 +28,19 @@ public class ShipController : MonoBehaviour {
         {
             GetComponent<Rigidbody>().MoveRotation(transform.rotation * Quaternion.Euler(0.0f, 1.0f, 0.0f));
         }
+    }
+
+    void FixedUpdate()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, -transform.up, out hit, 1))
+        {
+            print(hit.distance);
+            transform.up = hit.normal;
+
+
+        }
+
     }
 }
