@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c8047acc06d957148ba215fc7439b01b
-timeCreated: 1501959986
+guid: 64bfd7aa026eb4f48878a72ba3c23dc0
+timeCreated: 1501958536
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: track
+    4300000: Cube
   materials:
     importMaterials: 1
     materialName: 0
@@ -55,7 +55,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

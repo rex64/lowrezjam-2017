@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShipController : MonoBehaviour {
 
     public float speed;
+    public float gravity;
 
     // Use this for initialization
     void Start () {
@@ -54,7 +55,7 @@ public class ShipController : MonoBehaviour {
 
         } else
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.down, ForceMode.Acceleration);
+            GetComponent<Rigidbody>().AddForce(Vector3.down * gravity, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.Space))
