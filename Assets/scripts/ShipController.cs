@@ -52,12 +52,15 @@ public class ShipController : MonoBehaviour {
             //transform.rotation = Quaternion.LookRotation(hit.point + lookAt, hit.normal);
 
 
+        } else
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.down, ForceMode.Acceleration);
         }
 
         if (Input.GetKey(KeyCode.Space))
         {
             //GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
-            GetComponent<Rigidbody>().AddForce(transform.forward * 10.0f);
+            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
         }
 
         if (Input.GetKey(KeyCode.A))
