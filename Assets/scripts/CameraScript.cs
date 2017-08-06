@@ -24,5 +24,13 @@ public class CameraScript : MonoBehaviour {
         //transform.position = newPosition;
 
         //transform.localRotation = playerTransform.rotation;
+
+        ////transform.LookAt(playerTransform);
+        ////Vector3 newPosition = playerTransform.position;
+
+        //////newPosition = newPosition /*+ playerTransform.forward*/;
+        ////transform.position = newPosition;
+        ////transform.Translate(offset);
+        //////transform.Translate(Vector3.up * offset.y);
     }
 }

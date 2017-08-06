@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 261897828}
   - component: {fileID: 261897827}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1592,8 +1592,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109696056}
-  m_LocalRotation: {x: 0.09666264, y: -0, z: -0, w: 0.9953172}
-  m_LocalPosition: {x: 0, y: 1.8, z: -2.09}
+  m_LocalRotation: {x: 0.09666265, y: -0, z: -0, w: 0.9953173}
+  m_LocalPosition: {x: 0, y: 1.8000002, z: -2.0900004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 954883246}
@@ -1611,4 +1611,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 954883246}
-  offset: {x: 3, y: 1, z: 0}
+  offset: {x: 0, y: 0, z: 0}
