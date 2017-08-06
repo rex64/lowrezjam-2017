@@ -6,6 +6,10 @@ public class ShipController : MonoBehaviour {
 
     public float speed;
     public float gravity;
+    public float turning;
+
+    public Transform playerModelTransform;
+
 
     // Use this for initialization
     void Start () {
@@ -54,17 +58,34 @@ public class ShipController : MonoBehaviour {
         if (Input.GetKey(KeyCode.A) || Input.GetAxisRaw("Horizontal") == -1.0f)
         {
             GetComponent<Rigidbody>().MoveRotation(transform.rotation * Quaternion.Euler(0.0f, -1.0f, 0.0f));
-            GetComponent<Rigidbody>().AddTorque(Vector3.right * 10.0f);
+            //GetComponent<Rigidbody>().AddTorque(Vector3.right * 10.0f);
+            turning = Mathf.Max(-40.0f, turning - 1.0f);
 
 
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetAxisRaw("Horizontal") == 1.0f)
         {
             GetComponent<Rigidbody>().MoveRotation(transform.rotation * Quaternion.Euler(0.0f, 1.0f, 0.0f));
-            GetComponent<Rigidbody>().AddTorque(Vector3.left * 10.0f);
+            //GetComponent<Rigidbody>().AddTorque(Vector3.left * 10.0f);
+            turning = Mathf.Min(40.0f, turning + 1.0f);
+
         }
         else
         {
+            float iotti = 4.0f;
+
+            if (turning < 0.0f)
+            {
+                turning = turning + iotti > 0.0f ? 0.0f : turning + iotti;
+            }
+            else if (turning > 0.0f)
+            {
+                turning = turning - iotti < 0.0f ? 0.0f : turning - iotti;
+
+            }
+            //turning -= 1.0f;
+
+
             GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
         }
@@ -78,6 +99,13 @@ public class ShipController : MonoBehaviour {
 
         //print(_force);
         GetComponent<Rigidbody>().AddForce(_force);
+        playerModelTransform.localRotation = Quaternion.Euler(
+            playerModelTransform.localRotation.eulerAngles.x,
+            turning,
+            playerModelTransform.localRotation.eulerAngles.z
+        );
+
+
 
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour {
 
     public Transform playerTransform;
+    public Transform playerModelTransform;
     public Vector3 offset;
 
 	// Use this for initialization
@@ -32,5 +33,21 @@ public class CameraScript : MonoBehaviour {
         ////transform.position = newPosition;
         ////transform.Translate(offset);
         //////transform.Translate(Vector3.up * offset.y);
+
+        //transform.rotation.eulerAngles.Set(
+        //    transform.rotation.eulerAngles.x,
+        //    30.0f,
+        //    transform.rotation.eulerAngles.z
+        //);
+
+        //float t = Mathf.Lerp(transform.rotation.eulerAngles.y, playerModelTransform.transform.rotation.eulerAngles.y, Time.deltaTime);
+
+        //transform.rotation = Quaternion.Euler(
+        //    transform.rotation.eulerAngles.x, 
+        //    t, 
+        //    transform.rotation.eulerAngles.z
+        //);
+
+
     }
 }
